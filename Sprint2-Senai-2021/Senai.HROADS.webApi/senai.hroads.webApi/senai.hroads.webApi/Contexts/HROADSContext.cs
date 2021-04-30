@@ -184,7 +184,7 @@ namespace senai.hroads.webApi.Contexts
                     .IsUnicode(false)
                     .HasColumnName("email");
 
-                entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
+                entity.Property(e => e.idTipoUsuario).HasColumnName("idTipoUsuario");
 
                 entity.Property(e => e.Senha)
                     .IsRequired()
@@ -194,7 +194,7 @@ namespace senai.hroads.webApi.Contexts
 
                 entity.HasOne(d => d.IdTipoUsuarioNavigation)
                     .WithMany(p => p.Usuarios)
-                    .HasForeignKey(d => d.IdTipoUsuario)
+                    .HasForeignKey(d => d.idTipoUsuario)
                     .HasConstraintName("FK__Usuarios__idTipo__5FB337D6");
             });
 

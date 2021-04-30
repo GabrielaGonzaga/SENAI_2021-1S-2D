@@ -21,18 +21,12 @@ namespace senai.hroads.webApi.Repositories
             Personagen personagemBuscado = ctx.Personagens.Find(id);
 
             // Verifica se o nome do personagem foi informado
-            if (personagemAtualizado.Nome != null)
+            
+            if (personagemAtualizado != null)
             {
                 // Atribui os novos valores aos campos existentes
-                personagemBuscado.Nome = personagemAtualizado.Nome;
-                personagemBuscado.IdClasse = personagemAtualizado.IdClasse;
-                personagemBuscado.CapacidadeMaVida = personagemAtualizado.CapacidadeMaVida;
-                personagemBuscado.CapacidadeMaMana = personagemAtualizado.CapacidadeMaMana;
-                personagemBuscado.DataAtualizacao = personagemAtualizado.DataAtualizacao;
-                personagemBuscado.DataCriacao = personagemAtualizado.DataCriacao;
-                personagemBuscado.IdUsuario = personagemAtualizado.IdUsuario;
+                personagemBuscado = personagemAtualizado;
             }
-
             // Atualiza o personagem que foi buscado
             ctx.Personagens.Update(personagemBuscado);
 
@@ -42,13 +36,13 @@ namespace senai.hroads.webApi.Repositories
 
         public Personagen BuscarPorId(int id)
         {
-            // Retorna o primeiro estúdio encontrado para o ID informado
+            // Retorna o primeiro personagem encontrado para o ID informado
             return ctx.Personagens.FirstOrDefault(p=> p.IdPersonagem == id);
         }
 
         public void Cadastrar(Personagen novoPersonagem)
         {
-            // Adiciona este novoEstudio
+            // Adiciona este novoPersonagem
             ctx.Personagens.Add(novoPersonagem);
 
             // Salva as informações para serem gravas no banco de dados
@@ -57,10 +51,10 @@ namespace senai.hroads.webApi.Repositories
 
         public void Deletar(int id)
         {
-            // Busca um estúdio através do seu id
+            // Busca um personagem através do seu id
             Personagen personagemBuscado = ctx.Personagens.Find(id);
 
-            // Remove o estúdio que foi buscado
+            // Remove o personagem que foi buscado
             ctx.Personagens.Remove(personagemBuscado);
 
             // Salva as alterações no banco de dados
@@ -72,9 +66,5 @@ namespace senai.hroads.webApi.Repositories
             return ctx.Personagens.ToList();
         }
 
-        public List<Personagen> ListarJogador()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

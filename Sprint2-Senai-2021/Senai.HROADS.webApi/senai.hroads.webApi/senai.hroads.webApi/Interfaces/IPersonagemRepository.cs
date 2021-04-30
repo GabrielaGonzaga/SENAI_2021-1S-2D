@@ -1,14 +1,11 @@
 ﻿using senai.hroads.webApi.Domains;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai.hroads.webApi.Interfaces
 {
     interface IPersonagemRepository
     {
-        // <summary>
+        /// <summary>
         /// Lista todos os personagems
         /// </summary>
         /// <returns>Uma lista de personagems</returns>
@@ -24,14 +21,14 @@ namespace senai.hroads.webApi.Interfaces
         /// <summary>
         /// Cadastra um novo personagem
         /// </summary>
-        /// <param name="novoPersonagen">Objeto novoPersonagen que será cadastrado</param>
+        /// <param name="novoPersonagem">Objeto novoPersonagen que será cadastrado</param>
         void Cadastrar(Personagen novoPersonagem);
 
         /// <summary>
         /// Atualiza um personagem existente
         /// </summary>
         /// <param name="id">ID do personagem que será atualizado</param>
-        /// <param name="personagenAtualizado">Objeto personagenAtualizado com as novas informações</param>
+        /// <param name="personagemAtualizado">Objeto personagenAtualizado com as novas informações</param>
         void Atualizar(int id, Personagen personagemAtualizado);
 
         /// <summary>
@@ -40,10 +37,5 @@ namespace senai.hroads.webApi.Interfaces
         /// <param name="id">ID do personagem que será deletado</param>
         void Deletar(int id);
 
-        /// <summary>
-        /// Lista todos os personagens com seus respectivos jogos
-        /// </summary>
-        /// <returns>Uma lista de personagens com seus jogadores</returns>
-        List<Personagen> ListarJogador();
     }
 }
