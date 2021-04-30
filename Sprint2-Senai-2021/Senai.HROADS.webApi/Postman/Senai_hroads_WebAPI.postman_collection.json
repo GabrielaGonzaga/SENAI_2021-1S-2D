@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "b9240511-c6f9-4a6c-a0ac-15a8cdaaab1f",
+		"name": "Senai_hroads_WebAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Personagem",
+			"item": [
+				{
+					"name": "Personagens - ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personagens - Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"idClasse\": 2,\r\n        \"nome\": \"Teste\",\r\n        \"capacidadeMaVida\": \"240\",\r\n        \"capacidadeMaMana\": \"50\",\r\n        \"dataAtualizacao\": \"2021-06-08\",\r\n        \"dataCriacao\": \"2021-01-06\",\r\n        \"idUsuario\": 1\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personagens - AtualizarTudo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"idClasse\": 2,\r\n        \"nome\": \"Exemplo\",\r\n        \"capacidadeMaVida\": \"230\",\r\n        \"capacidadeMaMana\": \"90\",\r\n        \"dataAtualizacao\": \"2021-03-09T01:24:00\",\r\n        \"dataCriacao\": \"1950-01-01T00:00:00\",\r\n        \"idUsuario\": 1\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personagens - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TipoDeUsuario",
+			"item": [
+				{
+					"name": "Tipo de Usuario- ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/TiposDeUsuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"TiposDeUsuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo de Usuario - Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"tipoUsuario\": \"Ilustrador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/TiposDeUsuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"TiposDeUsuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo de Usuario - AtualizarTudo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n    \"tipoUsuario\": \"Teste\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/TiposDeUsuarios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"TiposDeUsuarios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo de UsuaRIO - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/TiposDeUsuarios/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"TiposDeUsuarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TipoHabilidade",
+			"item": [
+				{
+					"name": "TipoHabilidade - ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Habilidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Habilidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoHabilidade - Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nome\": \"Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/TiposHabilidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"TiposHabilidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoHabilidade - AtualizarTudo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n    \"nome\": \"Exemplo\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/TiposHabilidades/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"TiposHabilidades",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TipoHabilidade - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/TiposHabilidades/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"TiposHabilidades",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usúario",
+			"item": [
+				{
+					"name": "Usúarios - ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Usúarios - Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"Nome\": \"Beatriz\"\r\n   ,\"Sobrenome\": \"Almeida\"\r\n   ,\"DataNascimento\" : \"1996-07-24\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Funcionarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usúarios - AtualizarTudo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n    \"Nome\": \"Murilo\"\r\n   ,\"Sobrenome\": \"Santos\"\r\n   ,\"DataNascimento\" : \"1992-04-22\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Funcionarios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Funcionarios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usúarios - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Funcionarios/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Funcionarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usúarios - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"cliente@cliente.com\"\r\n    ,\"senha\" : \"cliente\"\r\n    ,\"idTipoUsuario\" : \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Habilidade",
+			"item": [
+				{
+					"name": "Habilidade - ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Habilidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Habilidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Habilidade - ListarTiposHabilidade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Habilidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Habilidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Habilidade  - Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaWVudGVAY2xpZW50ZS5jb20iLCJqdGkiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsImV4cCI6MTYxOTIxNTEyNSwiaXNzIjoiSW5sb2NrLndlYkFwaSIsImF1ZCI6IklubG9jay53ZWJBcGkifQ.Axosv-sQouJ6ExMpmTI1kmF76itgKtTqNElo8g06Du4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nomeJogo\": \"GTA V\"\r\n   ,\"descricao\": \"jogo de matar piu piu \"\r\n   ,\"datalancamento\" : \"2010-07-24\"\r\n   ,\"valor\" : \"R$ 150,99\"\r\n   ,\"idEstudio\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Habilidade  - AtualizarTudo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n    \"nomeJogo\": \"GTA IV\"\r\n   ,\"descricao\": \"jogo de matar piu piu pow \"\r\n   ,\"datalancamento\" : \"2010-06-24\"\r\n   ,\"valor\" : \"R$ 130,99\"\r\n   ,\"idEstudio\" : \"3\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Habilidade  - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Classe",
+			"item": [
+				{
+					"name": "Classe - ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Classes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Classe - Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaWVudGVAY2xpZW50ZS5jb20iLCJqdGkiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsImV4cCI6MTYxOTIxNTEyNSwiaXNzIjoiSW5sb2NrLndlYkFwaSIsImF1ZCI6IklubG9jay53ZWJBcGkifQ.Axosv-sQouJ6ExMpmTI1kmF76itgKtTqNElo8g06Du4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"nome\": \"Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Classes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Classe  - AtualizarTudo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n     \"nome\": \"Exemplo\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Classes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Classes",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Classe  - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Classes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Classes",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
