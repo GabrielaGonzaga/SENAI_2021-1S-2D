@@ -1,42 +1,44 @@
 USE Ecommerce;
-GO
+
 
 INSERT INTO Lojas(Nome)
-VALUES			 ('SenaiShop');
-GO
+VALUES			 ('Padaria.co')
+				,('Style');
+
 
 INSERT INTO Categorias(Nome, IdLoja)
-VALUES				  ('Cursos', 1)
-					 ,('Acessórios', 1);
-GO
+VALUES				  ('Alimentos', 1)
+					 ,('Roupas', 2);
+
 
 INSERT INTO SubCategorias(Nome, IdCategoria)
-VALUES					 ('Informática Básica', 1)
-						,('Desenvolvimento', 1)
-						,('Meio Ambiente', 2)
+VALUES					 ('Salgados', 1)
+						,('Doces', 1)
+						,('Calças', 2)
 						,('Camisetas', 2);
-GO
+
 
 INSERT INTO Produtos(Titulo, Valor, IdSubCategoria)
-VALUES				('Copo para café', 25, 3)
-				   ,('Jaqueta', 100, 4)
-				   ,('Excel Básico', 350, 1)
-				   ,('C#', 700, 2);
-GO
+VALUES				('Pizza', 32, 1)
+				   ,('Camiseta azul', 60, 4)
+				   ,('Legging', 80, 3)
+				   ,('Bolo de morango', 35, 2);
+
 
 INSERT INTO Clientes(Nome)
-VALUES				('Saulo')
-				   ,('Caique');
-GO
+VALUES				('Gabriela')
+				   ,('Amanda');
 
-INSERT INTO Pedidos(NumPedido, IdCliente, DataPedido, [Status])
-VALUES			   ('5455514', 1, '22/01/2019', 'Em andamento')
-				  ,('23232', 2, '22/01/2019', 'Entregue');
-GO
+
+INSERT INTO Pedidos( NPedido, IdCliente, DataPedido, [Status])
+VALUES			   ( 001, 1, GETDATE(), 'Em andamento')
+				  ,( 002, 2, GETDATE(), 'Entregue');
+
 
 INSERT INTO PedidosProdutos(IdPedido, IdProduto)
-VALUES					   (1,1)
-						  ,(1,2)
-						  ,(2,3)
-						  ,(2,4);
-GO
+VALUES					   (1,3)
+						  ,(1,1);
+						
+
+
+ 

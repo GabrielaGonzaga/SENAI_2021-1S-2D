@@ -18,28 +18,7 @@ CREATE TABLE Filmes
 	,Titulo VARCHAR(150) NOT NULL
 )
 
- 
-SELECT * FROM Filmes;
 
-SELECT * FROM Generos;
-SELECT Titulo, idGenero FROM Filmes;
-
---			Tabela	Coluna
-INSERT INTO Generos	(Nome)
-VALUES              ('A��o')
-					,('Aventura');
-
-DELETE FROM Generos WHERE idGenero = 4;
-
-INSERT INTO Filmes (Titulo, idGenero)
-VALUES				('Rambo', 1)
-					,('Vingadores', 1)
-					,('Ghost', 2)
-					,('Di�rio de uma paix�o', 2);
-
-UPDATE Generos
-SET Nome = 'Romance'
-WHERE  idGenero = 2;
 
 
 

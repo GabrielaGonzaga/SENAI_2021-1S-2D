@@ -1,26 +1,20 @@
 USE Ecommerce;
-GO
 
-SELECT * FROM Lojas;
-GO
 
-SELECT * FROM Categorias;
-GO
+SELECT * FROM Pedidos
 
-SELECT * FROM SubCategorias;
-GO
+SELECT * FROM Lojas
 
-SELECT * FROM Produtos;
-GO
+SELECT * FROM Produtos
 
-SELECT * FROM Clientes;
-GO
+SELECT * FROM Categorias
 
-SELECT * FROM Pedidos;
-GO
+SELECT * FROM Clientes
 
-SELECT * FROM PedidosProdutos;
-GO
+SELECT * FROM SubCategorias
+
+SELECT * FROM PedidosProdutos
+
 
 -- listar todos os pedidos de um cliente (nome), 
 -- mostrando quais produtos foram solicitados (titulo) neste pedido

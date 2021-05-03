@@ -1,40 +1,38 @@
 USE Micromanu;
-GO
+
 
 INSERT INTO Clientes(Nome)
-VALUES			 ('Saulo')
-				,('Caique');
-GO
+VALUES			 ('Cliente A')
+				,('Cliente B');
+				
 
-INSERT INTO Colaboradores(Nome, Salario)
-VALUES				  ('Paulo', 3000)
-					 ,('Odirlei', 4000)
-					 ,('Thiago', 3500)
-					 ,('Fernando', 5000);
-GO
+
+INSERT INTO Colaboradores(Nome)
+VALUES			('Erick')
+				,('Claudio')
+				,('Daniel');	  
+
 
 INSERT INTO Itens(Nome)
 VALUES			 ('Computador')
-				,('Notebook')
-				,('Video game')
 				,('Televisão')
+				,('Video game')
+				,('Notebook')
 				,('Celular');
-GO
+
 
 INSERT INTO TiposConsertos(Descricao)
 VALUES				('Manutenção')
 				   ,('Limpeza');
-GO
 
-INSERT INTO Pedidos(IdCliente, IdItem, IdTipoConserto, NumEquipamento, Entrada, Saida)
-VALUES			   (1, 1, 1, '123', '20/07/2020', '22/07/2020')
-				  ,(2, 3, 1, '321', '20/02/2021', '')
-				  ,(2, 4, 2, '132', '20/02/2021', '');
-GO
+
+INSERT INTO Pedidos(IdCliente, IdItem, IdTipoConserto, NEquipamento, Entrada, Saida)
+VALUES			   (1, 1, 1, '455', '20/08/2021', '22/07/2020')
+				  ,(2, 2, 2, '456', '24/08/2021', GETDATE());
+				  
 
 INSERT INTO PedidosColaboradores(IdPedido, IdColaborador)
 VALUES							(1,1)
-							   ,(2,2)
-							   ,(2,3)
-							   ,(3,1);
-GO
+							   ,(1,2)
+							   ,(2,3);
+							   
