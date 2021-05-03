@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7v10C3ZoxyLx0e2dYLe+4kQvCz9zK9Ww7RNVabarEt0/0xw39ZrF+kG6m1DSKJlGQE5gZlvUTIku831jz/fjUA==",
+  "dgSpecHash": "YLQVrfW8Fl/09thV6/ckm3ELdc7EsDQRqNYWP/gBH8r7VAublQmusKw7hUXUkDtuRChBoJgRKzgn4k4vPKC7fg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gabi\\Desktop\\INLOCK\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
+  "projectFilePath": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.InLock.webApi\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gabi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.5\\microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",
     "C:\\Users\\Gabi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

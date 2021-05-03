@@ -11,21 +11,6 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.5": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.7.1"
-        },
-        "compile": {
-          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -222,17 +207,6 @@
           "lib/netstandard2.1/_._": {}
         }
       },
-      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
-        }
-      },
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -360,10 +334,11 @@
           "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.11.0": {
+      "Microsoft.IdentityModel.JsonWebTokens/5.6.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.11.0"
+          "Microsoft.IdentityModel.Tokens": "5.6.0",
+          "Newtonsoft.Json": "10.0.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -372,7 +347,7 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Logging/6.11.0": {
+      "Microsoft.IdentityModel.Logging/5.6.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
@@ -381,11 +356,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Protocols/6.7.1": {
+      "Microsoft.IdentityModel.Protocols/5.6.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Logging": "6.7.1",
-          "Microsoft.IdentityModel.Tokens": "6.7.1"
+          "Microsoft.IdentityModel.Logging": "5.6.0",
+          "Microsoft.IdentityModel.Tokens": "5.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {}
@@ -394,11 +369,12 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.7.1": {
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.6.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Protocols": "6.7.1",
-          "System.IdentityModel.Tokens.Jwt": "6.7.1"
+          "Microsoft.IdentityModel.Protocols": "5.6.0",
+          "Newtonsoft.Json": "10.0.1",
+          "System.IdentityModel.Tokens.Jwt": "5.6.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
@@ -407,11 +383,11 @@
           "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
         }
       },
-      "Microsoft.IdentityModel.Tokens/6.11.0": {
+      "Microsoft.IdentityModel.Tokens/5.6.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
-          "Microsoft.IdentityModel.Logging": "6.11.0",
+          "Microsoft.IdentityModel.Logging": "5.6.0",
+          "Newtonsoft.Json": "10.0.1",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
@@ -437,15 +413,6 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
-        }
-      },
-      "Microsoft.OpenApi/1.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         }
       },
       "Microsoft.Win32.Primitives/4.3.0": {
@@ -547,6 +514,43 @@
           "System.Threading.Timer": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0"
+        }
+      },
+      "Newtonsoft.Json/10.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Numerics": "4.3.0",
+          "System.Runtime.Serialization.Formatters": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Xml.ReaderWriter": "4.3.0",
+          "System.Xml.XDocument": "4.3.0",
+          "System.Xml.XmlDocument": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -720,57 +724,6 @@
           }
         }
       },
-      "Swashbuckle.AspNetCore/6.1.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
-          "Swashbuckle.AspNetCore.Swagger": "6.1.3",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.1.3",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.1.3"
-        },
-        "build": {
-          "build/Swashbuckle.AspNetCore.props": {}
-        }
-      },
-      "Swashbuckle.AspNetCore.Swagger/6.1.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.OpenApi": "1.2.3"
-        },
-        "compile": {
-          "lib/net5.0/Swashbuckle.AspNetCore.Swagger.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/Swashbuckle.AspNetCore.Swagger.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "Swashbuckle.AspNetCore.SwaggerGen/6.1.3": {
-        "type": "package",
-        "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "6.1.3"
-        },
-        "compile": {
-          "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
-        }
-      },
-      "Swashbuckle.AspNetCore.SwaggerUI/6.1.3": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -851,7 +804,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
@@ -881,7 +834,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.ComponentModel.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.ComponentModel.dll": {}
@@ -904,7 +857,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
         },
         "runtime": {
           "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
@@ -930,7 +883,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
@@ -1027,6 +980,31 @@
           }
         }
       },
+      "System.Dynamic.Runtime/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Dynamic.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Dynamic.Runtime.dll": {}
+        }
+      },
       "System.Globalization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1074,11 +1052,12 @@
           }
         }
       },
-      "System.IdentityModel.Tokens.Jwt/6.11.0": {
+      "System.IdentityModel.Tokens.Jwt/5.6.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.11.0",
-          "Microsoft.IdentityModel.Tokens": "6.11.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "5.6.0",
+          "Microsoft.IdentityModel.Tokens": "5.6.0",
+          "Newtonsoft.Json": "10.0.1"
         },
         "compile": {
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
@@ -1613,7 +1592,7 @@
           "System.Runtime.Serialization.Primitives": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Runtime.Serialization.Formatters.dll": {}
         },
         "runtime": {
           "lib/netstandard1.4/System.Runtime.Serialization.Formatters.dll": {}
@@ -1640,7 +1619,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
@@ -1663,24 +1642,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "System.Security.Claims/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Security.Principal": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Security.Claims.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Security.Claims.dll": {}
         }
       },
       "System.Security.Cryptography.Algorithms/4.3.0": {
@@ -1914,18 +1875,6 @@
           "lib/netcoreapp3.0/System.Security.Permissions.dll": {}
         }
       },
-      "System.Security.Principal/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.0/System.Security.Principal.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/System.Security.Principal.dll": {}
-        }
-      },
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
@@ -2155,7 +2104,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Xml.XmlDocument.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
@@ -2206,21 +2155,6 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
-      ]
-    },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.5": {
-      "sha512": "wivdSSc+S+bNIWj/nUlpfNnpTnj5O+33NqXKiDlHFYaO2J6whRqNsGXlJ+UViKUzKMIDvj4K67W+dmVywUyXiw==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
-        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
-        "microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",
-        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -2512,33 +2446,6 @@
         "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
-    "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
-      "sha512": "LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
-      "type": "package",
-      "path": "microsoft.extensions.apidescription.server/3.0.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/Microsoft.Extensions.ApiDescription.Server.props",
-        "build/Microsoft.Extensions.ApiDescription.Server.targets",
-        "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props",
-        "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets",
-        "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-        "microsoft.extensions.apidescription.server.nuspec",
-        "tools/Newtonsoft.Json.dll",
-        "tools/dotnet-getdocument.deps.json",
-        "tools/dotnet-getdocument.dll",
-        "tools/dotnet-getdocument.runtimeconfig.json",
-        "tools/net461-x86/GetDocument.Insider.exe",
-        "tools/net461-x86/GetDocument.Insider.exe.config",
-        "tools/net461/GetDocument.Insider.exe",
-        "tools/net461/GetDocument.Insider.exe.config",
-        "tools/netcoreapp2.1/GetDocument.Insider.deps.json",
-        "tools/netcoreapp2.1/GetDocument.Insider.dll",
-        "tools/netcoreapp2.1/GetDocument.Insider.runtimeconfig.json"
-      ]
-    },
     "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
       "sha512": "bu8As90/SBAouMZ6fJ+qRNo1X+KgHGrVueFhhYi+E5WqEhcnp2HoWRFnMzXQ6g4RdZbvPowFerSbKNH4Dtg5yg==",
       "type": "package",
@@ -2769,94 +2676,108 @@
         "ref/xamarinmac20/Microsoft.Identity.Client.xml"
       ]
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.11.0": {
-      "sha512": "qSLfRLk19E1+Gt2gdPzp5Y4YAlXi1KueXpMJpt0qug6h4PtxbnGnxFBM6bdCIJqoN75LTPztqKdpjla2NIltmA==",
+    "Microsoft.IdentityModel.JsonWebTokens/5.6.0": {
+      "sha512": "0q0U1W+gX1jmfmv7uU7GXFGB518atmSwucxsVwPGpuaGS3jwd2tUi+Gau+ezxR6oAFEBFKG9lz/fxRZzGMeDXg==",
       "type": "package",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.11.0",
+      "path": "microsoft.identitymodel.jsonwebtokens/5.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/net45/Microsoft.IdentityModel.JsonWebTokens.xml",
+        "lib/net451/Microsoft.IdentityModel.JsonWebTokens.dll",
+        "lib/net451/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "lib/net472/Microsoft.IdentityModel.JsonWebTokens.dll",
-        "lib/net472/Microsoft.IdentityModel.JsonWebTokens.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.JsonWebTokens.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "microsoft.identitymodel.jsonwebtokens.6.11.0.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.5.6.0.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Logging/6.11.0": {
-      "sha512": "81votFg2SzidAB8frGlDV+jCCzfBWWtnKASZTddAziHuB8fT/82s1x7Kty+u01XKtKcrPdfpvbWrIUHdc/C9pw==",
+    "Microsoft.IdentityModel.Logging/5.6.0": {
+      "sha512": "zEDrfEVW5x5w2hbTV94WwAcWvtue5hNTXYqoPh3ypF6U8csm09JazEYy+VPp2RtczkyMfcsvWY9Fea17e+isYQ==",
       "type": "package",
-      "path": "microsoft.identitymodel.logging/6.11.0",
+      "path": "microsoft.identitymodel.logging/5.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.IdentityModel.Logging.dll",
         "lib/net45/Microsoft.IdentityModel.Logging.xml",
+        "lib/net451/Microsoft.IdentityModel.Logging.dll",
+        "lib/net451/Microsoft.IdentityModel.Logging.xml",
         "lib/net461/Microsoft.IdentityModel.Logging.dll",
         "lib/net461/Microsoft.IdentityModel.Logging.xml",
-        "lib/net472/Microsoft.IdentityModel.Logging.dll",
-        "lib/net472/Microsoft.IdentityModel.Logging.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Logging.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Logging.xml",
-        "microsoft.identitymodel.logging.6.11.0.nupkg.sha512",
+        "microsoft.identitymodel.logging.5.6.0.nupkg.sha512",
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Protocols/6.7.1": {
-      "sha512": "DVGYIRUK3TkCTmz0IgBzWUE55CDNfLtXil1FgSbgHI7hi2fP2pz4tiTAno/5O/hdVwAzV+HtCQtFi7xW8smaHw==",
+    "Microsoft.IdentityModel.Protocols/5.6.0": {
+      "sha512": "ei7YqYx0pIFL6JjK8ZnPK0MXZRWUNHtJPUl3KqSvj9+2f5CMa6GRSEC+BMDHr17tP6yujYUg0IQOcKzmC7qN5g==",
       "type": "package",
-      "path": "microsoft.identitymodel.protocols/6.7.1",
+      "path": "microsoft.identitymodel.protocols/5.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.IdentityModel.Protocols.dll",
         "lib/net45/Microsoft.IdentityModel.Protocols.xml",
+        "lib/net451/Microsoft.IdentityModel.Protocols.dll",
+        "lib/net451/Microsoft.IdentityModel.Protocols.xml",
         "lib/net461/Microsoft.IdentityModel.Protocols.dll",
         "lib/net461/Microsoft.IdentityModel.Protocols.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.xml",
-        "microsoft.identitymodel.protocols.6.7.1.nupkg.sha512",
+        "microsoft.identitymodel.protocols.5.6.0.nupkg.sha512",
         "microsoft.identitymodel.protocols.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.7.1": {
-      "sha512": "99gA+E6ZOCqySrT80Yh6wrfjJfeMxDisdAcA5Q66zHxMPY5Gzc8aT2Ldzu0GP1sADv/o3yI1Gc3P1GHXlXAVVQ==",
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.6.0": {
+      "sha512": "yh3n+uXiwpBy/5+t67tYcmRxb9kwQdaKRyG/DNipRMF37bg5Jr0vENOo1BQz6OySMl5WIK544SzPjtr7/KkucA==",
       "type": "package",
-      "path": "microsoft.identitymodel.protocols.openidconnect/6.7.1",
+      "path": "microsoft.identitymodel.protocols.openidconnect/5.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
         "lib/net45/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
+        "lib/net451/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+        "lib/net451/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
         "lib/net461/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
         "lib/net461/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
-        "microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
+        "microsoft.identitymodel.protocols.openidconnect.5.6.0.nupkg.sha512",
         "microsoft.identitymodel.protocols.openidconnect.nuspec"
       ]
     },
-    "Microsoft.IdentityModel.Tokens/6.11.0": {
-      "sha512": "zm0aBLKCDybRQwOinG0cDXobjfcJgXIcJfB5n7gA8KHjswELcET8BiNx54j6n4VF8w6+UxUIdEtO3RMIXQZkfg==",
+    "Microsoft.IdentityModel.Tokens/5.6.0": {
+      "sha512": "C3OqR3QfBQ7wcC7yAsdMQqay87OsV6yWPYG/Ai3n7dvmWIGkouQhXoVxRP0xz3cAFL4hxZBXyw4aLTC421PaMg==",
       "type": "package",
-      "path": "microsoft.identitymodel.tokens/6.11.0",
+      "path": "microsoft.identitymodel.tokens/5.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.IdentityModel.Tokens.dll",
         "lib/net45/Microsoft.IdentityModel.Tokens.xml",
+        "lib/net451/Microsoft.IdentityModel.Tokens.dll",
+        "lib/net451/Microsoft.IdentityModel.Tokens.xml",
         "lib/net461/Microsoft.IdentityModel.Tokens.dll",
         "lib/net461/Microsoft.IdentityModel.Tokens.xml",
-        "lib/net472/Microsoft.IdentityModel.Tokens.dll",
-        "lib/net472/Microsoft.IdentityModel.Tokens.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.xml",
-        "microsoft.identitymodel.tokens.6.11.0.nupkg.sha512",
+        "microsoft.identitymodel.tokens.5.6.0.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
@@ -2890,23 +2811,6 @@
         "microsoft.netcore.targets.1.1.3.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
-      ]
-    },
-    "Microsoft.OpenApi/1.2.3": {
-      "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
-      "type": "package",
-      "path": "microsoft.openapi/1.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net46/Microsoft.OpenApi.dll",
-        "lib/net46/Microsoft.OpenApi.pdb",
-        "lib/net46/Microsoft.OpenApi.xml",
-        "lib/netstandard2.0/Microsoft.OpenApi.dll",
-        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
-        "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.2.3.nupkg.sha512",
-        "microsoft.openapi.nuspec"
       ]
     },
     "Microsoft.Win32.Primitives/4.3.0": {
@@ -3034,6 +2938,33 @@
         "dotnet_library_license.txt",
         "netstandard.library.1.6.1.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/10.0.1": {
+      "sha512": "ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
+      "type": "package",
+      "path": "newtonsoft.json/10.0.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -3258,78 +3189,6 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
-      ]
-    },
-    "Swashbuckle.AspNetCore/6.1.3": {
-      "sha512": "NjPt/1hmsb0DT+YkTBsU+zHzsRObJUoAgNk78GLlCQzfHrXXUXX3eWm/WDPl31CyD3f55gzbGWotrYRQ+CyXfQ==",
-      "type": "package",
-      "path": "swashbuckle.aspnetcore/6.1.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/Swashbuckle.AspNetCore.props",
-        "swashbuckle.aspnetcore.6.1.3.nupkg.sha512",
-        "swashbuckle.aspnetcore.nuspec"
-      ]
-    },
-    "Swashbuckle.AspNetCore.Swagger/6.1.3": {
-      "sha512": "gHXukdWLzGgXHP0xhvqhwqb4hes82jIndGTA2kTKXqLsh7+O2mvOAhRapYC5Z32Ok4k87C2UjtXUV+Tfxiw2vQ==",
-      "type": "package",
-      "path": "swashbuckle.aspnetcore.swagger/6.1.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "swashbuckle.aspnetcore.swagger.6.1.3.nupkg.sha512",
-        "swashbuckle.aspnetcore.swagger.nuspec"
-      ]
-    },
-    "Swashbuckle.AspNetCore.SwaggerGen/6.1.3": {
-      "sha512": "RhR606gEIni8vV8319b5tr0S3hA0M2rfy8qG91k8Vh06cHXVElvU/DmSDgNkujatffWqfxzgdW0gahp0rm5n1w==",
-      "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggergen/6.1.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "swashbuckle.aspnetcore.swaggergen.6.1.3.nupkg.sha512",
-        "swashbuckle.aspnetcore.swaggergen.nuspec"
-      ]
-    },
-    "Swashbuckle.AspNetCore.SwaggerUI/6.1.3": {
-      "sha512": "IivAWH0mPBPCBv+qaI3YBtz+zamBffiLQE+OTNpIhDHvvqCj//9gb4VgZWrWVnmoc1WqCf61dGreu24hKiEFDQ==",
-      "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggerui/6.1.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "swashbuckle.aspnetcore.swaggerui.6.1.3.nupkg.sha512",
-        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -4226,6 +4085,77 @@
         "version.txt"
       ]
     },
+    "System.Dynamic.Runtime/4.3.0": {
+      "sha512": "SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
+      "type": "package",
+      "path": "system.dynamic.runtime/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Dynamic.Runtime.dll",
+        "lib/netstandard1.3/System.Dynamic.Runtime.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Dynamic.Runtime.dll",
+        "ref/netcore50/System.Dynamic.Runtime.xml",
+        "ref/netcore50/de/System.Dynamic.Runtime.xml",
+        "ref/netcore50/es/System.Dynamic.Runtime.xml",
+        "ref/netcore50/fr/System.Dynamic.Runtime.xml",
+        "ref/netcore50/it/System.Dynamic.Runtime.xml",
+        "ref/netcore50/ja/System.Dynamic.Runtime.xml",
+        "ref/netcore50/ko/System.Dynamic.Runtime.xml",
+        "ref/netcore50/ru/System.Dynamic.Runtime.xml",
+        "ref/netcore50/zh-hans/System.Dynamic.Runtime.xml",
+        "ref/netcore50/zh-hant/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/System.Dynamic.Runtime.dll",
+        "ref/netstandard1.0/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/de/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/es/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/fr/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/it/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/ja/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/ko/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/ru/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/zh-hans/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.0/zh-hant/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/System.Dynamic.Runtime.dll",
+        "ref/netstandard1.3/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/de/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/es/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/fr/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/it/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/ja/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/ko/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/ru/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/zh-hans/System.Dynamic.Runtime.xml",
+        "ref/netstandard1.3/zh-hant/System.Dynamic.Runtime.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Dynamic.Runtime.dll",
+        "system.dynamic.runtime.4.3.0.nupkg.sha512",
+        "system.dynamic.runtime.nuspec"
+      ]
+    },
     "System.Globalization/4.3.0": {
       "sha512": "kYdVd2f2PAdFGblzFswE4hkNANJBKRmsfa2X5LG2AcWE1c7/4t0pYae1L8vfZ5xvE2nK/R9JprtToA61OSHWIg==",
       "type": "package",
@@ -4373,22 +4303,24 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-    "System.IdentityModel.Tokens.Jwt/6.11.0": {
-      "sha512": "j57TBY3Xf989vFUt2C25DpDqM8P4Re1bi4GL3U6L6VVgJr+AZIWmA1SMEOKyaIwSP0rHWimQh4jGxzycidGflQ==",
+    "System.IdentityModel.Tokens.Jwt/5.6.0": {
+      "sha512": "KMvPpX4exs2fe7Upq5zHMSR4yupc+jy8WG8yjucZL0XvT+r/T0hRvLIe9fP/SeN8/UVxFYBRAkRI5k1zbRGqmA==",
       "type": "package",
-      "path": "system.identitymodel.tokens.jwt/6.11.0",
+      "path": "system.identitymodel.tokens.jwt/5.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/System.IdentityModel.Tokens.Jwt.dll",
         "lib/net45/System.IdentityModel.Tokens.Jwt.xml",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.xml",
         "lib/net461/System.IdentityModel.Tokens.Jwt.dll",
         "lib/net461/System.IdentityModel.Tokens.Jwt.xml",
-        "lib/net472/System.IdentityModel.Tokens.Jwt.dll",
-        "lib/net472/System.IdentityModel.Tokens.Jwt.xml",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
-        "system.identitymodel.tokens.jwt.6.11.0.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.5.6.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -6228,45 +6160,6 @@
         "version.txt"
       ]
     },
-    "System.Security.Claims/4.3.0": {
-      "sha512": "P/+BR/2lnc4PNDHt/TPBAWHVMLMRHsyYZbU1NphW4HIWzCggz8mJbTQQ3MKljFE7LS3WagmVFuBgoLcFzYXlkA==",
-      "type": "package",
-      "path": "system.security.claims/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Security.Claims.dll",
-        "lib/netstandard1.3/System.Security.Claims.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Security.Claims.dll",
-        "ref/netstandard1.3/System.Security.Claims.dll",
-        "ref/netstandard1.3/System.Security.Claims.xml",
-        "ref/netstandard1.3/de/System.Security.Claims.xml",
-        "ref/netstandard1.3/es/System.Security.Claims.xml",
-        "ref/netstandard1.3/fr/System.Security.Claims.xml",
-        "ref/netstandard1.3/it/System.Security.Claims.xml",
-        "ref/netstandard1.3/ja/System.Security.Claims.xml",
-        "ref/netstandard1.3/ko/System.Security.Claims.xml",
-        "ref/netstandard1.3/ru/System.Security.Claims.xml",
-        "ref/netstandard1.3/zh-hans/System.Security.Claims.xml",
-        "ref/netstandard1.3/zh-hant/System.Security.Claims.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.security.claims.4.3.0.nupkg.sha512",
-        "system.security.claims.nuspec"
-      ]
-    },
     "System.Security.Cryptography.Algorithms/4.3.0": {
       "sha512": "W1kd2Y8mYSCgc3ULTAZ0hOP2dSdG5YauTb1089T0/kRcN2MpSAW1izOFROrJgxSlMn3ArsgHXagigyi+ibhevg==",
       "type": "package",
@@ -6615,65 +6508,6 @@
         "system.security.permissions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "System.Security.Principal/4.3.0": {
-      "sha512": "I1tkfQlAoMM2URscUtpcRo/hX0jinXx6a/KUtEQoz3owaYwl3qwsO8cbzYVVnjxrzxjHo3nJC+62uolgeGIS9A==",
-      "type": "package",
-      "path": "system.security.principal/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Security.Principal.dll",
-        "lib/netstandard1.0/System.Security.Principal.dll",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/System.Security.Principal.dll",
-        "ref/netcore50/System.Security.Principal.xml",
-        "ref/netcore50/de/System.Security.Principal.xml",
-        "ref/netcore50/es/System.Security.Principal.xml",
-        "ref/netcore50/fr/System.Security.Principal.xml",
-        "ref/netcore50/it/System.Security.Principal.xml",
-        "ref/netcore50/ja/System.Security.Principal.xml",
-        "ref/netcore50/ko/System.Security.Principal.xml",
-        "ref/netcore50/ru/System.Security.Principal.xml",
-        "ref/netcore50/zh-hans/System.Security.Principal.xml",
-        "ref/netcore50/zh-hant/System.Security.Principal.xml",
-        "ref/netstandard1.0/System.Security.Principal.dll",
-        "ref/netstandard1.0/System.Security.Principal.xml",
-        "ref/netstandard1.0/de/System.Security.Principal.xml",
-        "ref/netstandard1.0/es/System.Security.Principal.xml",
-        "ref/netstandard1.0/fr/System.Security.Principal.xml",
-        "ref/netstandard1.0/it/System.Security.Principal.xml",
-        "ref/netstandard1.0/ja/System.Security.Principal.xml",
-        "ref/netstandard1.0/ko/System.Security.Principal.xml",
-        "ref/netstandard1.0/ru/System.Security.Principal.xml",
-        "ref/netstandard1.0/zh-hans/System.Security.Principal.xml",
-        "ref/netstandard1.0/zh-hant/System.Security.Principal.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.security.principal.4.3.0.nupkg.sha512",
-        "system.security.principal.nuspec"
       ]
     },
     "System.Security.Principal.Windows/4.7.0": {
@@ -7518,13 +7352,9 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.5",
-      "Swashbuckle.AspNetCore >= 6.1.3",
-      "System.IdentityModel.Tokens.Jwt >= 6.11.0",
-      "System.Security.Claims >= 4.3.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.5"
     ]
   },
   "packageFolders": {
@@ -7533,11 +7363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabi\\Desktop\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
+      "projectUniqueName": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.HROADS.webApi\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
       "projectName": "senai.hroads.webApi",
-      "projectPath": "C:\\Users\\Gabi\\Desktop\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
+      "projectPath": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.HROADS.webApi\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
       "packagesPath": "C:\\Users\\Gabi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabi\\Desktop\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
+      "outputPath": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.HROADS.webApi\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gabi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7566,10 +7396,6 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.JwtBearer": {
-            "target": "Package",
-            "version": "[5.0.5, )"
-          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.5, )"
@@ -7583,18 +7409,6 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.5, )"
-          },
-          "Swashbuckle.AspNetCore": {
-            "target": "Package",
-            "version": "[6.1.3, )"
-          },
-          "System.IdentityModel.Tokens.Jwt": {
-            "target": "Package",
-            "version": "[6.11.0, )"
-          },
-          "System.Security.Claims": {
-            "target": "Package",
-            "version": "[4.3.0, )"
           }
         },
         "imports": [

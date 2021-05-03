@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
@@ -11,8 +10,6 @@ using System.Threading.Tasks;
 
 namespace senai.hroads.webApi.Controllers
 {
-    [Produces("application/json")]
-
     [Route("api/[controller]")]
 
     [ApiController]
@@ -35,7 +32,6 @@ namespace senai.hroads.webApi.Controllers
         /// Lista todos os personagens
         /// </summary>
         /// <returns>Uma lista de personagens e um status code 200 - Ok</returns>
-        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -46,10 +42,10 @@ namespace senai.hroads.webApi.Controllers
 
 
         /// <summary>
-        /// Atualiza um personagem existente
+        /// Atualiza um estúdio existente
         /// </summary>
-        /// <param name="id">ID do personagem que será atualizado</param>
-        /// <param name="personagemAtualizado">Objeto personagemAtualizado com as novas informações</param>
+        /// <param name="id">ID do estúdio que será atualizado</param>
+        /// <param name="estudioAtualizado">Objeto estudioAtualizado com as novas informações</param>
         /// <returns>Um status code 204 - No Content</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Personagen personagemAtualizado)
@@ -62,9 +58,9 @@ namespace senai.hroads.webApi.Controllers
         }
 
         /// <summary>
-        /// Busca um personagem através do seu ID
+        /// Busca um estúdio através do seu ID
         /// </summary>
-        /// <param name="id">ID do personagem que será buscado</param>
+        /// <param name="id">ID do estúdio que será buscado</param>
         /// <returns>Um estúdio encontrado e um status code 200 - Ok</returns>
         /// http://localhost:5000/api/estudios/1
         [HttpGet("{id}")]
@@ -77,11 +73,10 @@ namespace senai.hroads.webApi.Controllers
 
 
         /// <summary>
-        /// Cadastra um novo personagem
+        /// Cadastra um novo estúdio
         /// </summary>
-        /// <param name="novoPersonagem">Objeto novoPersonagem que será cadastrado</param>
+        /// <param name="novoEstudio">Objeto novoEstudio que será cadastrado</param>
         /// <returns>Um status code 201 - Created</returns>
-        [Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Post(Personagen novoPersonagem)
         {
@@ -90,21 +85,6 @@ namespace senai.hroads.webApi.Controllers
 
             // Retorna um status code
             return StatusCode(201);
-        }
-
-        /// <summary>
-        /// Deleta um personagem existente
-        /// </summary>
-        /// <param name="id">ID do personagem que será deletado</param>
-        /// <returns>Um status code 204 - No Content</returns>
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            // Faz a chamada para o método
-            _personagemRepository.Deletar(id);
-
-            // Retorna um status code
-            return StatusCode(200);
         }
 
     }
