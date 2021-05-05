@@ -54,14 +54,14 @@ namespace senai.SPMEG.webApi.Repositories
             ctx.SaveChanges();
         }
 
-        public void AtualizarSituacao(int id, Consulta consultaAtualizada)
+        public void AtualizarSituacao(int id, string Situacao)
         {
             Consulta consultaBuscada = ctx.Consultas.Find(id);
 
-            if (consultaAtualizada.Situacao != null)
+            if (Situacao != null)
             {
                 // Atribui os novos valores aos campos existentes
-                consultaBuscada.Situacao = consultaAtualizada.Situacao;
+                consultaBuscada.Situacao = Situacao;
             }
 
             // Atualiza o consulta que foi buscado

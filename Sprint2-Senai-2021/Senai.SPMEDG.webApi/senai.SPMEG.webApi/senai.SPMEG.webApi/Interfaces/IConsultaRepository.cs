@@ -40,7 +40,7 @@ namespace senai.SPMEG.webApi.Interfaces
         /// </summary>
         /// <param name="id">ID do consulta e a situação que será atualizada</param>
         /// <param name="consultaAtualizada">Objeto consultaAtualizado com as novas informações</param>
-        void AtualizarSituacao(int id, Consulta consultaAtualizada);
+        void AtualizarSituacao(int id, string Situacao);
 
 
         /// <summary>

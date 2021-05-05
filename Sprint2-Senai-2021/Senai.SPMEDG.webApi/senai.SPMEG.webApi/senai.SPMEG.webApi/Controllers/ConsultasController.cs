@@ -62,6 +62,22 @@ namespace senai.SPMEG.webApi.Controllers
         }
 
         /// <summary>
+        /// Atualiza uma situacao existente
+        /// </summary>
+        /// <param name="id">ID da situacao que será atualizado</param>
+        /// <param name="Situacao">Objeto situacao com as novas informações</param>
+        /// <returns>Um status code 204 - No Content</returns>
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, string Situacao)
+        {
+            // Faz a chamada para o método
+            _consultaRepository.AtualizarSituacao(id, Situacao);
+
+            // Retorna um status code
+            return StatusCode(204);
+        }
+
+        /// <summary>
         /// Busca um consulta através do seu ID
         /// </summary>
         /// <param name="id">ID do consulta que será buscado</param>
