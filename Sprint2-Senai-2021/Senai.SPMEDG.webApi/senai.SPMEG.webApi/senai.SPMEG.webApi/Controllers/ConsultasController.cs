@@ -67,7 +67,7 @@ namespace senai.SPMEG.webApi.Controllers
         /// <param name="id">ID da situacao que será atualizado</param>
         /// <param name="Situacao">Objeto situacao com as novas informações</param>
         /// <returns>Um status code 204 - No Content</returns>
-        [HttpPut("{id}")]
+        [HttpPut("Situacao/{id}")]
         public IActionResult Put(int id, string Situacao)
         {
             // Faz a chamada para o método
@@ -129,7 +129,7 @@ namespace senai.SPMEG.webApi.Controllers
         {
             try
             {
-                // Cria uma variável idUsuario que recebe o valor do ID do usuário que está logado
+                // Cria uma variável idPerfil que recebe o valor do ID do usuário que está logado
                 int idPerfil = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
                 // Retora a resposta da requisição 200 - OK fazendo a chamada para o método e trazendo a lista
