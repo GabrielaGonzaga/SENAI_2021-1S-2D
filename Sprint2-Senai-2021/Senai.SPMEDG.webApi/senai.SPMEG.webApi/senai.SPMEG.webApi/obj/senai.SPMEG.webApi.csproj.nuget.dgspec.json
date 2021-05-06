@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabi\\Desktop\\SPMEDG\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj": {}
+    "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.SPMEDG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabi\\Desktop\\SPMEDG\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj": {
+    "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.SPMEDG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabi\\Desktop\\SPMEDG\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj",
+        "projectUniqueName": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.SPMEDG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj",
         "projectName": "senai.SPMEG.webApi",
-        "projectPath": "C:\\Users\\Gabi\\Desktop\\SPMEDG\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj",
+        "projectPath": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.SPMEDG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj",
         "packagesPath": "C:\\Users\\Gabi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabi\\Desktop\\SPMEDG\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\obj\\",
+        "outputPath": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.SPMEDG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gabi\\AppData\\Roaming\\NuGet\\NuGet.Config",

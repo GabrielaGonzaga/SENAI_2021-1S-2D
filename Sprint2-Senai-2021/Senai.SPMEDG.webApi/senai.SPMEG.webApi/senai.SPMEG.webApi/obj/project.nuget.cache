@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MWcqHrex5odMkKP4wo8NfWcGkk/RboV/WWnpTWZ8uuvkRswUdGLfNgdhMVLtp8/PR/LRCV6mDEl/3SIqMMJ/Tw==",
+  "dgSpecHash": "rDTECxDvfHyKmWObFZnSvhESI3Rm/eKO0Jb3eT7EzPs71abEdr250q1syq5s83xo3wrggJJwSorvEQs2kHUh6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gabi\\Desktop\\SPMEDG\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj",
+  "projectFilePath": "C:\\Users\\Gabi\\Desktop\\SENAI_2021-1S-2D\\Sprint2-Senai-2021\\Senai.SPMEDG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi\\senai.SPMEG.webApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gabi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Gabi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.5\\microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",
