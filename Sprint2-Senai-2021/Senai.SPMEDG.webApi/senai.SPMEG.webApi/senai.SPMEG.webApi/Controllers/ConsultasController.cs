@@ -70,11 +70,19 @@ namespace senai.SPMEG.webApi.Controllers
         [HttpPut("Situacao/{id}")]
         public IActionResult Put(int id, string Situacao)
         {
-            // Faz a chamada para o método
-            _consultaRepository.AtualizarSituacao(id, Situacao);
+            try
+            {
+                // Faz chamada para o método
+                _consultaRepository.AtualizarSituacao(id, Situacao);
 
-            // Retorna um status code
-            return StatusCode(204);
+                // Retorna um status code
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                // Retorna a exception e um status code 400 - Bad Request
+                return BadRequest(ex);
+            }
         }
 
         /// <summary>
