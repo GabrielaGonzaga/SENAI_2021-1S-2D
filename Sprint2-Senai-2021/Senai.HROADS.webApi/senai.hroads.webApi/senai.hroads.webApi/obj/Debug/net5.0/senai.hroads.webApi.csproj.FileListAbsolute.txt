@@ -56,3 +56,12 @@ C:\Users\Gabi\source\repos\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net
 C:\Users\Gabi\source\repos\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\ref\senai.hroads.webApi.dll
 C:\Users\Gabi\source\repos\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.pdb
 C:\Users\Gabi\source\repos\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.genruntimeconfig.cache
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.csproj.AssemblyReference.cache
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.AssemblyInfoInputs.cache
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.AssemblyInfo.cs
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.csproj.CoreCompileInputs.cache
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.dll
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\ref\senai.hroads.webApi.dll
+C:\Users\Gabi\Desktop\SENAI_2021-1S-2D\Sprint2-Senai-2021\Senai.HROADS.webApi\senai.hroads.webApi\senai.hroads.webApi\obj\Debug\net5.0\senai.hroads.webApi.pdb

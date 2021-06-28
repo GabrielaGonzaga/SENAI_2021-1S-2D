@@ -70,7 +70,8 @@ CREATE TABLE  Consultas
 	idConsulta			INT PRIMARY KEY IDENTITY
 	,idPaciente			INT FOREIGN KEY REFERENCES Pacientes  (idPaciente)
 	,idMedico			INT FOREIGN KEY REFERENCES Medicos    (idMedico)
-	,dataConsulta		SMALLDATETIME NOT NULL
+	,horaConsulta		TIME NOT NULL
+	,dataConsulta		DATE NOT NULL
 	,situacao			VARCHAR(200)  NOT NULL
 );
 
@@ -107,7 +108,9 @@ GO
 
 ---- Fim CREATES ----
 
+SELECT * FROM Consultas
 
+ALTER TABLE Consultas ADD VARCHAR(20) NULL, column_c INT NULL ;
 
 
 

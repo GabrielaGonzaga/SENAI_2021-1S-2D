@@ -78,4 +78,13 @@ VALUES				   (7, 3, '20/01/2020 15:00', 'Realizada' )
 					   ,(4, 1, '09/03/2020 11:00', 'Agendada' );
 
 
+INSERT INTO Consultas (idPaciente, idMedico, dataConsulta, horaConsulta, situacao)
+VALUES				   (7, 3, '20/01/2020', '15:00', 'Realizada' )
+					   ,(2, 2, '06/01/2020', '10:00', 'Cancelada' )
+					   ,(3, 2, '07/02/2020', '11:00', 'Realizada' )
+					   ,(2, 2, '06/02/2018', '10:00', 'Realizada' )
+					   ,(4, 1, '07/02/2019', '11:00', 'Cancelada' )
+					   ,(7, 3, '08/03/2020', '15:00', 'Agendada' )
+					   ,(4, 1, '09/03/2020', '11:00', 'Agendada' );
+
 ---- FIM INSERTS ----

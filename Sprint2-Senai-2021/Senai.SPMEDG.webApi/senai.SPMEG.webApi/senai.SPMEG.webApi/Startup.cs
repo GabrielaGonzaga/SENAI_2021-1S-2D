@@ -19,39 +19,40 @@ namespace senai.SPMEG.webApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
 
             services
                 .AddSwaggerGen();
 
 
             services
-               //Forma de autenticação
+               //Forma de autenticaï¿½ï¿½o
                .AddAuthentication(options =>
                {
                    options.DefaultAuthenticateScheme = "JwtBearer";
                    options.DefaultChallengeScheme = "JwtBearer";
                })
 
-               //Definição dos parâmetros
+               //Definiï¿½ï¿½o dos parï¿½metros
                .AddJwtBearer("JwtBearer", options =>
                {
                    options.TokenValidationParameters = new TokenValidationParameters
                    {
-                        //quem esta solicitando a ação
+                        //quem esta solicitando a aï¿½ï¿½o
                         ValidateIssuer = true,
 
-                        //quem esta recebendo a ação
+                        //quem esta recebendo a aï¿½ï¿½o
                         ValidateAudience = true,
 
-                        //tempo de expiração
+                        //tempo de expiraï¿½ï¿½o
                         ValidateLifetime = true,
 
                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Semprepea10_perfis")),
 
-                        //tempo de expiração
+                        //tempo de expiraï¿½ï¿½o
                         ClockSkew = TimeSpan.FromMinutes(45),
 
-                        //Nome do issuer, de onde está vindo 
+                        //Nome do issuer, de onde estï¿½ vindo 
                         ValidIssuer = "SPMEDG.webApi",
 
                         //nome do audience, para aonde vai
@@ -59,6 +60,17 @@ namespace senai.SPMEG.webApi
                    };
                });
 
+               
+             // Adiciona o CORS ao projeto
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy", 
+                    builder => {
+                        builder.WithOrigins("http://localhost:3000", "http://localhost:19006")
+                                                                    .AllowAnyHeader()
+                                                                    .AllowAnyMethod();
+                    }
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,6 +92,9 @@ namespace senai.SPMEG.webApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+             // Define o uso de CORS
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 
