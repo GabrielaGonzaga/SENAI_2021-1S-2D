@@ -132,50 +132,45 @@ namespace senai.SPMEG.webApi.Controllers
         }
 
         [Authorize(Roles = "2")]
-        [HttpGet("Medicos")]
-        public IActionResult GetMyM()
+        [HttpGet("meuspacientes")]
+        public IActionResult ListarConsultasM()
         {
             try
             {
-                // Cria uma variável idPerfil que recebe o valor do ID do usuário que está logado
-                int idPerfil = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-
-                // Retora a resposta da requisição 200 - OK fazendo a chamada para o método e trazendo a lista
-                return Ok(_consultaRepository.ListarConsultaPorMedico(idPerfil));
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(u => u.Type == JwtRegisteredClaimNames.Jti).Value);
+                
+                return Ok(_consultaRepository.ListarConsultasM(idUsuario));
             }
-            catch (Exception error)
+            catch (Exception erro)
             {
-                // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
                 return BadRequest(new
                 {
                     mensagem = "Não é possível mostrar as consultas se o usuário não estiver logado!",
-                    error
+                    erro
                 });
             }
         }
 
         [Authorize(Roles = "3")]
-        [HttpGet("Pacientes")]
-        public IActionResult GetMyP()
+        [HttpGet("minhasconsultas")]
+        public IActionResult ListarConsultasP()
         {
             try
             {
-                // Cria uma variável idUsuario que recebe o valor do ID do usuário que está logado
-                int idPerfil = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(u => u.Type == JwtRegisteredClaimNames.Jti).Value);
 
-                // Retora a resposta da requisição 200 - OK fazendo a chamada para o método e trazendo a lista
-                return Ok(_consultaRepository.ListarConsultaPorPaciente(idPerfil));
+                return Ok(_consultaRepository.ListarConsultasP(idUsuario));
             }
-            catch (Exception error)
+            catch (Exception erro)
             {
-                // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
                 return BadRequest(new
                 {
                     mensagem = "Não é possível mostrar as consultas se o usuário não estiver logado!",
-                    error
+                    erro
                 });
             }
         }
+
 
 
     }

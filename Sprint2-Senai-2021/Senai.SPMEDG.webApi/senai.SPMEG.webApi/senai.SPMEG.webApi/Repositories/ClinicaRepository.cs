@@ -19,10 +19,10 @@ namespace senai.SPMEG.webApi.Repositories
 
             // Verifica as informações
 
-            if (clinicaAtualizado.NomeClinica != null)
+            if (clinicaAtualizado.Clinica1 != null)
             {
                 // Atribui os novos valores aos campos existentes
-                clinicaBuscado.NomeClinica = clinicaAtualizado.NomeClinica;
+                clinicaBuscado.Clinica1 = clinicaAtualizado.Clinica1;
             }
 
             if (clinicaAtualizado.RazaoSocial != null)
@@ -31,10 +31,10 @@ namespace senai.SPMEG.webApi.Repositories
                 clinicaBuscado.RazaoSocial = clinicaAtualizado.RazaoSocial;
             }
 
-            if (clinicaAtualizado.Endereço != null)
+            if (clinicaAtualizado.Endereco != null)
             {
                 // Atribui os novos valores aos campos existentes
-                clinicaBuscado.Endereço = clinicaAtualizado.Endereço;
+                clinicaBuscado.Endereco = clinicaAtualizado.Endereco;
             }
 
             // Atualiza o clinica que foi buscado

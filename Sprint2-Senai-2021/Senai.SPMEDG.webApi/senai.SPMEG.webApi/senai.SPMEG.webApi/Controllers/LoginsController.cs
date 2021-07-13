@@ -21,27 +21,27 @@ namespace senai.SPMEG.webApi.Controllers
     public class LoginsController : ControllerBase
     {
         /// <summary>
-        /// Objeto _perfilRepository que irá receber todos os métodos definidos na interface IPerfilRepository
+        /// Objeto _UsuarioRepository que irá receber todos os métodos definidos na interface IUsuarioRepository
         /// </summary>
-        private IPerfilRepository _perfilRepository { get; set; }
+        private IUsuarioRepository _usuarioRepository { get; set; }
 
         /// <summary>
-        /// Instancia o objeto _perfilRepository para que haja a referência aos métodos no repositório
+        /// Instancia o objeto _UsuarioRepository para que haja a referência aos métodos no repositório
         /// </summary>
         public LoginsController()
         {
-            _perfilRepository = new PerfilRepository();
+            _usuarioRepository = new UsuarioRepository();
         }
 
 
         [HttpPost]
-        public IActionResult Login(Perfi login)
+        public IActionResult Login(Usuario login)
         {
             //Busca o usuário pelo e-mail e senha
-            Perfi perfilBuscado = _perfilRepository.Login(login.Email, login.Senha);
+            Usuario usuarioBuscado = _usuarioRepository.Login(login.Email, login.Senha);
 
             //Caso não encontre nenhum usuário com o e-mail e senha informados
-            if (perfilBuscado == null)
+            if (usuarioBuscado == null)
             {
                 //retorna NotFound com uma mensagem personalizada
                 return NotFound("E-mail ou senha inválidos!");
@@ -53,9 +53,13 @@ namespace senai.SPMEG.webApi.Controllers
             var claims = new[]
             {
                                               //Tipo da claim + seu valor
-                new Claim(JwtRegisteredClaimNames.Email, perfilBuscado.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, perfilBuscado.IdPerfil.ToString()),
-                new Claim(ClaimTypes.Role, perfilBuscado.IdTipoPerfil.ToString())
+                new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
+                new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString()),
+                new Claim("role", usuarioBuscado.IdTipoUsuario.ToString()),
+                new Claim(JwtRegisteredClaimNames.GivenName, usuarioBuscado.NomeUsuario)
+
+
 
             };
 

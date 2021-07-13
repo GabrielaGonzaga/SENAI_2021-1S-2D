@@ -100,30 +100,55 @@ namespace senai.SPMEG.webApi.Repositories
 
         public List<Consulta> Listar()
         {
-            return ctx.Consultas.ToList();
+
+            return ctx.Consultas
+
+            .Include(c => c.IdPacienteNavigation)
+
+            .Include(c => c.IdMedicoNavigation)
+
+            .Include(c => c.IdPacienteNavigation.IdUsuarioNavigation)
+
+            .Include(c => c.IdMedicoNavigation.IdUsuarioNavigation)
+
+            .Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation)
+
+            .ToList();
+
         }
 
-        public List<Consulta> ListarConsultaPorMedico(int id)
+        public List<Consulta> ListarConsultasM(int idUsuario)
         {
             return ctx.Consultas
-                .Include(c => c.IdMedicoNavigation.Nome)
-                .Include(c => c.IdPacienteNavigation.Nome)
-                .Include(c => c.DataConsulta.ToString())
-                .Include(c => c.Situacao)
-                .Where(p => p.IdMedico == id)
-                .ToList();
+
+            .Include(c => c.IdMedicoNavigation)
+
+            .Include(c => c.IdPacienteNavigation)
+
+            .Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation)
+
+            .Where(c => c.IdMedicoNavigation.IdUsuario == idUsuario)
+
+            .ToList();
         }
 
-        public List<Consulta> ListarConsultaPorPaciente(int id)
+        public List<Consulta> ListarConsultasP(int idUsuario)
         {
             return ctx.Consultas
-               .Include(c => c.IdPacienteNavigation.Nome)
-               .Include(c => c.IdMedicoNavigation.Nome)
-               .Include(c => c.DataConsulta.ToString())
-               .Include(c => c.Situacao)
-               .Where(p => p.IdPaciente == id)
-               .ToList();
+            .Include(c => c.IdPacienteNavigation)
+
+            .Include(c => c.IdMedicoNavigation)
+
+            .Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation)
+
+            .Where(c => c.IdPacienteNavigation.IdUsuario == idUsuario)
+
+            .ToList();
         }
+
+        
     }
-}
+
+        
+ }
 

@@ -5,9 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace senai.SPMEG.webApi
@@ -18,11 +21,24 @@ namespace senai.SPMEG.webApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
             
+              .AddNewtonsoftJson(options =>
+                {
+                    // Ignora os loopings nas consultas
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    // Ignora valores nulos ao fazer jun��es nas consultas
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                });
 
-            services
-                .AddSwaggerGen();
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SPMEDG.webApi", Version = "v1" });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
 
 
             services
@@ -60,10 +76,9 @@ namespace senai.SPMEG.webApi
                    };
                });
 
-               
-             // Adiciona o CORS ao projeto
+            // Adiciona o CORS ao projeto
             services.AddCors(options => {
-                options.AddPolicy("CorsPolicy", 
+                options.AddPolicy("CorsPolicy",
                     builder => {
                         builder.WithOrigins("http://localhost:3000", "http://localhost:19006")
                                                                     .AllowAnyHeader()
@@ -71,6 +86,7 @@ namespace senai.SPMEG.webApi
                     }
                 );
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,14 +102,15 @@ namespace senai.SPMEG.webApi
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "senai.SPMEDG.webApi ");
+                c.RoutePrefix = string.Empty;
             });
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-             // Define o uso de CORS
+            // Define o uso de CORS
             app.UseCors("CorsPolicy");
 
             app.UseRouting();

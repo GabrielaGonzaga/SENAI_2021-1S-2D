@@ -19,22 +19,16 @@ namespace senai.SPMEG.webApi.Repositories
 
             // Verifica as informações
 
-            if (pacienteAtualizado.IdTipoPerfil != null)
+            if (pacienteAtualizado.IdUsuario != null)
             {
                 // Atribui os novos valores aos campos existentes
-                pacienteBuscado.IdTipoPerfil = pacienteAtualizado.IdTipoPerfil;
+                pacienteBuscado.IdUsuario = pacienteAtualizado.IdUsuario;
             }
 
             if (pacienteAtualizado.Nome != null)
             {
                 // Atribui os novos valores aos campos existentes
                 pacienteBuscado.Nome = pacienteAtualizado.Nome;
-            }
-
-            if (pacienteAtualizado.Email != null)
-            {
-                // Atribui os novos valores aos campos existentes
-                pacienteBuscado.Email = pacienteAtualizado.Email;
             }
 
             if (pacienteAtualizado.DataNascimento.ToString() != null)

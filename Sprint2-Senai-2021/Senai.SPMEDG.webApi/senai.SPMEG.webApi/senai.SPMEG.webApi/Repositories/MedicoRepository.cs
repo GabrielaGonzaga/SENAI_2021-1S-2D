@@ -18,23 +18,17 @@ namespace senai.SPMEG.webApi.Repositories
             Medico medicoBuscado = ctx.Medicos.Find(id);
 
             // Verifica as informações
-
-            if (medicoAtualizado.IdTipoPerfil != null)
+            
+            if (medicoAtualizado.IdUsuario != null)
             {
                 // Atribui os novos valores aos campos existentes
-                medicoBuscado.IdTipoPerfil = medicoAtualizado.IdTipoPerfil;
+                medicoBuscado.IdUsuario = medicoAtualizado.IdUsuario;
             }
 
             if (medicoAtualizado.Nome != null)
             {
                 // Atribui os novos valores aos campos existentes
                 medicoBuscado.Nome = medicoAtualizado.Nome;
-            }
-
-            if (medicoAtualizado.Email != null)
-            {
-                // Atribui os novos valores aos campos existentes
-                medicoBuscado.Email = medicoAtualizado.Email;
             }
 
             if (medicoAtualizado.IdEspecialidade != null)

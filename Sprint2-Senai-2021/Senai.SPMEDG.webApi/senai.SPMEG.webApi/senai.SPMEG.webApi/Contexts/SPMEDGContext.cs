@@ -23,15 +23,17 @@ namespace senai.SPMEG.webApi.Contexts
         public virtual DbSet<Especialidade> Especialidades { get; set; }
         public virtual DbSet<Medico> Medicos { get; set; }
         public virtual DbSet<Paciente> Pacientes { get; set; }
-        public virtual DbSet<Perfi> Perfis { get; set; }
-        public virtual DbSet<TipoPerfil> TipoPerfils { get; set; }
+        public virtual DbSet<TiposUsuario> TiposUsuarios { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-RGIIP6F;initial catalog=SPMEDG; user Id=sa; pwd=Semprepea10;");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                 optionsBuilder.UseSqlServer(@"Data Source=LAB08DESK601\SQLEXPRESS; initial catalog=SPMEDG; user Id=sa; pwd=sa132;");
+                //optionsBuilder.UseSqlServer("Data Source=DESKTOP-RGIIP6F; initial catalog=SPMEDG; user Id=sa; pwd=Semprepea10;");
+               
             }
         }
 
@@ -42,21 +44,21 @@ namespace senai.SPMEG.webApi.Contexts
             modelBuilder.Entity<Clinica>(entity =>
             {
                 entity.HasKey(e => e.IdClinica)
-                    .HasName("PK__Clinicas__C73A605569BBF861");
+                    .HasName("PK__Clinicas__C73A60552DEFCCF0");
 
                 entity.Property(e => e.IdClinica).HasColumnName("idClinica");
 
-                entity.Property(e => e.Endereço)
+                entity.Property(e => e.Clinica1)
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false)
-                    .HasColumnName("endereço");
+                    .HasColumnName("clinica");
 
-                entity.Property(e => e.NomeClinica)
+                entity.Property(e => e.Endereco)
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false)
-                    .HasColumnName("nomeClinica");
+                    .HasColumnName("endereco");
 
                 entity.Property(e => e.RazaoSocial)
                     .IsRequired()
@@ -68,13 +70,15 @@ namespace senai.SPMEG.webApi.Contexts
             modelBuilder.Entity<Consulta>(entity =>
             {
                 entity.HasKey(e => e.IdConsulta)
-                    .HasName("PK__Consulta__CA9C61F543CCA333");
+                    .HasName("PK__Consulta__CA9C61F52076D164");
 
                 entity.Property(e => e.IdConsulta).HasColumnName("idConsulta");
 
                 entity.Property(e => e.DataConsulta)
-                    .HasColumnType("smalldatetime")
+                    .HasColumnType("date")
                     .HasColumnName("dataConsulta");
+
+                entity.Property(e => e.HoraConsulta).HasColumnName("horaConsulta");
 
                 entity.Property(e => e.IdMedico).HasColumnName("idMedico");
 
@@ -89,18 +93,18 @@ namespace senai.SPMEG.webApi.Contexts
                 entity.HasOne(d => d.IdMedicoNavigation)
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdMedico)
-                    .HasConstraintName("FK__Consultas__idMed__4F7CD00D");
+                    .HasConstraintName("FK__Consultas__idMed__3C69FB99");
 
                 entity.HasOne(d => d.IdPacienteNavigation)
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdPaciente)
-                    .HasConstraintName("FK__Consultas__idPac__4E88ABD4");
+                    .HasConstraintName("FK__Consultas__idPac__3B75D760");
             });
 
             modelBuilder.Entity<Especialidade>(entity =>
             {
                 entity.HasKey(e => e.IdEspecialidade)
-                    .HasName("PK__Especial__4096980506806EE2");
+                    .HasName("PK__Especial__40969805666AAF47");
 
                 entity.Property(e => e.IdEspecialidade).HasColumnName("idEspecialidade");
 
@@ -114,9 +118,12 @@ namespace senai.SPMEG.webApi.Contexts
             modelBuilder.Entity<Medico>(entity =>
             {
                 entity.HasKey(e => e.IdMedico)
-                    .HasName("PK__Medicos__4E03DEBA458EC5C7");
+                    .HasName("PK__Medicos__4E03DEBA06D1E59B");
 
-                entity.HasIndex(e => e.Email, "UQ__Medicos__AB6E6164EAB1893E")
+                entity.HasIndex(e => e.Cnpj, "UQ__Medicos__AA57D6B4818D31BF")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.Crm, "UQ__Medicos__C1F887FFCE0CB7DC")
                     .IsUnique();
 
                 entity.Property(e => e.IdMedico).HasColumnName("idMedico");
@@ -133,17 +140,11 @@ namespace senai.SPMEG.webApi.Contexts
                     .IsUnicode(false)
                     .HasColumnName("CRM");
 
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(200)
-                    .IsUnicode(false)
-                    .HasColumnName("email");
-
                 entity.Property(e => e.IdClinica).HasColumnName("idClinica");
 
                 entity.Property(e => e.IdEspecialidade).HasColumnName("idEspecialidade");
 
-                entity.Property(e => e.IdTipoPerfil).HasColumnName("idTipoPerfil");
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -154,34 +155,31 @@ namespace senai.SPMEG.webApi.Contexts
                 entity.HasOne(d => d.IdClinicaNavigation)
                     .WithMany(p => p.Medicos)
                     .HasForeignKey(d => d.IdClinica)
-                    .HasConstraintName("FK__Medicos__idClini__4BAC3F29");
+                    .HasConstraintName("FK__Medicos__idClini__38996AB5");
 
                 entity.HasOne(d => d.IdEspecialidadeNavigation)
                     .WithMany(p => p.Medicos)
                     .HasForeignKey(d => d.IdEspecialidade)
-                    .HasConstraintName("FK__Medicos__idEspec__4AB81AF0");
+                    .HasConstraintName("FK__Medicos__idEspec__37A5467C");
 
-                entity.HasOne(d => d.IdTipoPerfilNavigation)
+                entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Medicos)
-                    .HasForeignKey(d => d.IdTipoPerfil)
-                    .HasConstraintName("FK__Medicos__idTipoP__49C3F6B7");
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK__Medicos__idUsuar__36B12243");
             });
 
             modelBuilder.Entity<Paciente>(entity =>
             {
                 entity.HasKey(e => e.IdPaciente)
-                    .HasName("PK__Paciente__F48A08F2B2EF7035");
+                    .HasName("PK__Paciente__F48A08F2921C72DE");
 
-                entity.HasIndex(e => e.Telefone, "UQ__Paciente__2A16D97FF6406E26")
+                entity.HasIndex(e => e.Telefone, "UQ__Paciente__2A16D97F3693C13F")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Rg, "UQ__Paciente__321537C8DA46A676")
+                entity.HasIndex(e => e.Rg, "UQ__Paciente__321537C80199C866")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Email, "UQ__Paciente__AB6E6164E8184B33")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.Cpf, "UQ__Paciente__C1F89731B5ED1C55")
+                entity.HasIndex(e => e.Cpf, "UQ__Paciente__C1F897317CF95F1E")
                     .IsUnique();
 
                 entity.Property(e => e.IdPaciente).HasColumnName("idPaciente");
@@ -196,19 +194,13 @@ namespace senai.SPMEG.webApi.Contexts
                     .HasColumnType("smalldatetime")
                     .HasColumnName("dataNascimento");
 
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(200)
-                    .IsUnicode(false)
-                    .HasColumnName("email");
-
                 entity.Property(e => e.Endereço)
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false)
                     .HasColumnName("endereço");
 
-                entity.Property(e => e.IdTipoPerfil).HasColumnName("idTipoPerfil");
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -227,21 +219,40 @@ namespace senai.SPMEG.webApi.Contexts
                     .IsUnicode(false)
                     .HasColumnName("telefone");
 
-                entity.HasOne(d => d.IdTipoPerfilNavigation)
+                entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Pacientes)
-                    .HasForeignKey(d => d.IdTipoPerfil)
-                    .HasConstraintName("FK__Pacientes__idTip__4222D4EF");
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK__Pacientes__idUsu__2E1BDC42");
             });
 
-            modelBuilder.Entity<Perfi>(entity =>
+            modelBuilder.Entity<TiposUsuario>(entity =>
             {
-                entity.HasKey(e => e.IdPerfil)
-                    .HasName("PK__Perfis__40F13B6004765C1D");
+                entity.HasKey(e => e.IdTipoUsuario)
+                    .HasName("PK__TiposUsu__03006BFF03163DDD");
 
-                entity.HasIndex(e => e.Email, "UQ__Perfis__AB6E6164F73F298B")
+                entity.ToTable("TiposUsuario");
+
+                entity.HasIndex(e => e.TituloTipoUsuario, "UQ__TiposUsu__C6B29FC3AF09A30A")
                     .IsUnique();
 
-                entity.Property(e => e.IdPerfil).HasColumnName("idPerfil");
+                entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
+
+                entity.Property(e => e.TituloTipoUsuario)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false)
+                    .HasColumnName("tituloTipoUsuario");
+            });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(e => e.IdUsuario)
+                    .HasName("PK__Usuarios__645723A6DEC22974");
+
+                entity.HasIndex(e => e.Email, "UQ__Usuarios__AB6E61642DBE5C39")
+                    .IsUnique();
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -249,7 +260,7 @@ namespace senai.SPMEG.webApi.Contexts
                     .IsUnicode(false)
                     .HasColumnName("email");
 
-                entity.Property(e => e.IdTipoPerfil).HasColumnName("idTipoPerfil");
+                entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
 
                 entity.Property(e => e.NomeUsuario)
                     .IsRequired()
@@ -263,29 +274,10 @@ namespace senai.SPMEG.webApi.Contexts
                     .IsUnicode(false)
                     .HasColumnName("senha");
 
-                entity.HasOne(d => d.IdTipoPerfilNavigation)
-                    .WithMany(p => p.Perfis)
-                    .HasForeignKey(d => d.IdTipoPerfil)
-                    .HasConstraintName("FK__Perfis__idTipoPe__3A81B327");
-            });
-
-            modelBuilder.Entity<TipoPerfil>(entity =>
-            {
-                entity.HasKey(e => e.IdTipoPerfil)
-                    .HasName("PK__TipoPerf__892066B55C4E43E0");
-
-                entity.ToTable("TipoPerfil");
-
-                entity.HasIndex(e => e.TituloTipoPerfil, "UQ__TipoPerf__18B83A72F949503C")
-                    .IsUnique();
-
-                entity.Property(e => e.IdTipoPerfil).HasColumnName("idTipoPerfil");
-
-                entity.Property(e => e.TituloTipoPerfil)
-                    .IsRequired()
-                    .HasMaxLength(200)
-                    .IsUnicode(false)
-                    .HasColumnName("tituloTipoPerfil");
+                entity.HasOne(d => d.IdTipoUsuarioNavigation)
+                    .WithMany(p => p.Usuarios)
+                    .HasForeignKey(d => d.IdTipoUsuario)
+                    .HasConstraintName("FK__Usuarios__idTipo__286302EC");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -13,9 +13,9 @@ namespace senai.SPMEG.webApi.Domains
         }
 
         public int IdClinica { get; set; }
-        public string NomeClinica { get; set; }
+        public string Clinica1 { get; set; }
         public string RazaoSocial { get; set; }
-        public string Endereço { get; set; }
+        public string Endereco { get; set; }
 
         public virtual ICollection<Medico> Medicos { get; set; }
     }
